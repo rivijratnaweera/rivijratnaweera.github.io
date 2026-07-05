@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV — Rivi J. Ratnaweera</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0d1013;
+    --surface: #14181c;
+    --border: #262d33;
+    --text: #eceeef;
+    --text-dim: #9aa2a9;
+    --text-faint: #5f676e;
+    --gold: #d3a54d;
+    --teal: #6fb8ad;
+    --display: 'Sora', 'Inter', sans-serif;
+    --body: 'Inter', sans-serif;
+    --mono: 'IBM Plex Mono', monospace;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    background-image: radial-gradient(circle at 15% 0%, rgba(211,165,77,0.05), transparent 40%),
+                       radial-gradient(circle at 90% 30%, rgba(111,184,173,0.04), transparent 45%);
+    color: var(--text);
+    font-family: var(--body);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 5rem 1.5rem 6rem;
+  }
+
+  .back-link {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    color: var(--text-faint);
+    text-decoration: none;
+    margin-bottom: 2rem;
+  }
+  .back-link:hover { color: var(--gold); }
+
+  header.page-head {
+    margin-bottom: 2.6rem;
+    padding-bottom: 2.4rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(2rem, 4.8vw, 2.7rem);
+    letter-spacing: -0.02em;
+    margin: 0 0 0.6rem;
+    color: var(--text);
+  }
+
+  .role {
+    font-family: var(--display);
+    font-size: 1.02rem;
+    color: var(--gold);
+    font-weight: 600;
+    margin: 0 0 1.1rem;
+  }
+
+  .meta-row {
+    display: flex;
+    gap: 1.6rem;
+    flex-wrap: wrap;
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    color: var(--text-faint);
+  }
+  .meta-row a { color: var(--teal); text-decoration: none; }
+  .meta-row a:hover { color: var(--gold); }
+
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin: 3.2rem 0 1.4rem;
+  }
+
+  .section-head h2 {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 1.3rem;
+    margin: 0;
+    color: var(--text);
+  }
+
+  .count {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    color: var(--text-faint);
+  }
+
+  ol.list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .entry {
+    position: relative;
+    padding: 1.3rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .entry:last-child { border-bottom: none; }
+
+  .entry-title {
+    font-family: var(--body);
+    font-weight: 600;
+    font-size: 1.02rem;
+    color: var(--text);
+    margin: 0 0 0.3rem;
+  }
+
+  .entry-sub {
+    color: var(--gold);
+    font-size: 0.92rem;
+    font-weight: 500;
+    margin: 0 0 0.3rem;
+  }
+
+  .entry-meta {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    margin: 0 0 0.4rem;
+  }
+
+  .entry-desc {
+    color: var(--text-dim);
+    font-size: 0.92rem;
+    margin: 0;
+  }
+
+  .entry-date {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    color: var(--text-faint);
+  }
+
+  /* Institution + timeline row with icons */
+  .meta-row-icons {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.6rem;
+    margin: 0 0 0.4rem;
+  }
+
+  .meta-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.42rem;
+  }
+
+  .meta-item svg {
+    flex-shrink: 0;
+  }
+
+  .meta-item.institute {
+    color: var(--gold);
+    font-size: 0.92rem;
+    font-weight: 500;
+  }
+  .meta-item.institute svg { color: var(--gold); }
+
+  .meta-item.timeline {
+    color: var(--text-faint);
+    font-family: var(--mono);
+    font-size: 0.78rem;
+  }
+  .meta-item.timeline svg { color: var(--text-faint); }
+
+  /* Bulleted description lists (work / teaching experience) */
+  .bullet-list {
+    margin: 0.5rem 0 0;
+    padding-left: 1.15rem;
+  }
+  .bullet-list li {
+    color: var(--text-dim);
+    font-size: 0.92rem;
+    margin-bottom: 0.45rem;
+    line-height: 1.55;
+  }
+  .bullet-list li:last-child { margin-bottom: 0; }
+  .bullet-list li::marker { color: var(--gold); }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.4rem 2rem;
+  }
+
+  .skill-group h4 {
+    font-family: var(--display);
+    font-size: 0.92rem;
+    color: var(--teal);
+    margin: 0 0 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    font-weight: 600;
+  }
+
+  .skill-group p {
+    font-size: 0.88rem;
+    color: var(--text-dim);
+    margin: 0;
+    line-height: 1.6;
+  }
+
+  /* Publications list (numbered, with badges) */
+  ol.pub-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    counter-reset: pubitem;
+  }
+
+  .pub-entry {
+    position: relative;
+    padding: 1.35rem 0 1.35rem 2.8rem;
+    border-bottom: 1px solid var(--border);
+  }
+  .pub-entry:last-child { border-bottom: none; }
+
+  .pub-entry::before {
+    counter-increment: pubitem;
+    content: counter(pubitem, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    top: 1.4rem;
+    font-family: var(--mono);
+    font-size: 0.82rem;
+    color: var(--gold);
+    width: 2rem;
+  }
+
+  .pub-title {
+    font-family: var(--body);
+    font-weight: 600;
+    font-size: 1.02rem;
+    color: var(--text);
+    margin: 0 0 0.4rem;
+    line-height: 1.45;
+  }
+  .pub-title a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+  }
+  .pub-title a:hover {
+    color: var(--gold);
+    border-bottom-color: var(--gold);
+  }
+
+  .pub-meta {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    margin: 0 0 0.3rem;
+  }
+  .pub-meta .journal { font-weight: 500; color: var(--text); }
+
+  .pub-tags {
+    display: inline-flex;
+    gap: 0.5rem;
+    margin-top: 0.4rem;
+  }
+
+  .badge {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 0.22rem 0.55rem;
+    border-radius: 4px;
+    background: rgba(111,184,173,0.1);
+    color: var(--teal);
+    border: 1px solid rgba(111,184,173,0.25);
+  }
+  .badge.year {
+    background: rgba(211,165,77,0.1);
+    color: var(--gold);
+    border-color: rgba(211,165,77,0.25);
+  }
+
+  .equal-note {
+    font-size: 0.78rem;
+    color: var(--text-faint);
+    margin-top: 0.5rem;
+  }
+
+  .subsection-label {
+    font-family: var(--mono);
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-faint);
+    margin: 2.2rem 0 0.8rem;
+  }
+  .subsection-label:first-child { margin-top: 0; }
+
+  /* Anchor offsets so jumped-to sections aren't flush against the viewport edge */
+  #publications, #education, #experience { scroll-margin-top: 2rem; }
+
+  /* Certifications */
+  .cert-entry {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .cert-entry:last-child { border-bottom: none; }
+  .cert-entry .entry-title { margin-bottom: 0.2rem; }
+  .cert-entry .entry-meta { margin: 0; }
+
+  /* References grid */
+  .refs-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .ref-card {
+    padding: 1.2rem 1.3rem;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+  }
+  .ref-card .name {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 0.96rem;
+    color: var(--text);
+    margin: 0 0 0.2rem;
+  }
+  .ref-card .title {
+    font-size: 0.84rem;
+    color: var(--gold);
+    margin: 0 0 0.5rem;
+  }
+  .ref-card .org {
+    font-size: 0.84rem;
+    color: var(--text-dim);
+    margin: 0 0 0.5rem;
+    line-height: 1.5;
+  }
+  .ref-card .contact {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    color: var(--text-faint);
+  }
+  .ref-card .contact a { color: var(--teal); text-decoration: none; }
+  .ref-card .contact a:hover { color: var(--gold); }
+
+  footer.page-foot {
+    margin-top: 4rem;
+    padding-top: 1.6rem;
+    border-top: 1px solid var(--border);
+    font-family: var(--mono);
+    font-size: 0.76rem;
+    color: var(--text-faint);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  @media (max-width: 560px){
+    .wrap { padding: 3rem 1.2rem 4rem; }
+    .skills-grid { grid-template-columns: 1fr; }
+    .refs-grid { grid-template-columns: 1fr; }
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <a class="back-link" href="index.html">← Back to portfolio</a>
+
+  <header class="page-head">
+    <div class="eyebrow">Curriculum Vitae</div>
+    <h1>Rivi J. Ratnaweera</h1>
+    <p class="role">Materials Scientist</p>
+    <div class="meta-row">
+      <span>6375 Richmond Hwy Apt 468, Alexandria, VA 22306</span>
+      <span><a href="mailto:rivijratnaweera@gmail.com">rivijratnaweera@gmail.com</a></span>
+      <span>(979) 204-4464</span>
+    </div>
+  </header>
+
+  <section id="education">
+    <div class="section-head">
+      <h2>Education</h2>
+    </div>
+    <ol class="list">
+      <li class="entry">
+        <p class="entry-title">Ph.D. in Materials Chemistry</p>
+        <div class="meta-row-icons">
+          <span class="meta-item institute"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 21V7l6-4 6 4v14"/><path d="M3 21h18"/><path d="M9 9h1M9 13h1M14 9h1M14 13h1"/></svg>Texas A&amp;M University, College Station, TX</span>
+          <span class="meta-item timeline"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Sep 2017 – Jul 2023</span>
+        </div>
+        <p class="entry-desc">Overall GPA: 4.00</p>
+      </li>
+      <li class="entry">
+        <p class="entry-title">B.Sc. (Hons) in Computational Chemistry</p>
+        <div class="meta-row-icons">
+          <span class="meta-item institute"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 21V7l6-4 6 4v14"/><path d="M3 21h18"/><path d="M9 9h1M9 13h1M14 9h1M14 13h1"/></svg>University of Colombo, Sri Lanka</span>
+          <span class="meta-item timeline"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Sep 2011 – Feb 2016</span>
+        </div>
+        <p class="entry-desc">Overall GPA: 3.62</p>
+      </li>
+    </ol>
+  </section>
+
+  <section id="experience">
+    <div class="section-head">
+      <h2>Work Experience</h2>
+    </div>
+    <ol class="list">
+      <li class="entry">
+        <p class="entry-title">NRC Postdoctoral Fellow</p>
+        <div class="meta-row-icons">
+          <span class="meta-item institute"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 21V7l6-4 6 4v14"/><path d="M3 21h18"/><path d="M9 9h1M9 13h1M14 9h1M14 13h1"/></svg>U.S. Naval Research Laboratory</span>
+          <span class="meta-item timeline"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Jan 2025 – Present</span>
+        </div>
+        <ul class="bullet-list">
+          <li>[Add a bullet or two on your current responsibilities and focus area — I'll format it to match the rest.]</li>
+        </ul>
+      </li>
+      <li class="entry">
+        <p class="entry-title">NSF IPERF Postdoctoral Fellow</p>
+        <div class="meta-row-icons">
+          <span class="meta-item institute"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 21V7l6-4 6 4v14"/><path d="M3 21h18"/><path d="M9 9h1M9 13h1M14 9h1M14 13h1"/></svg>NanoPattern Technologies, Inc.</span>
+          <span class="meta-item timeline"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Jul 2023 – Jan 2025</span>
+        </div>
+        <ul class="bullet-list">
+          <li>Led multiple R&amp;D projects aimed at developing photopatternable quantum dot inks for micro-LED display applications.</li>
+          <li>Designed and executed experiments to enhance the optical properties (PLQY, EQE, OD) and processability of quantum dot inks, leading to significant advancements in product performance.</li>
+          <li>Investigated energy transfer mechanisms in InP QD films using fluorescence spectroscopy, time-resolved photoluminescence, TEM, SEM, and EDS.</li>
+          <li>Fabricated prototype devices at the Argonne National Laboratory's Center for Nanoscale Materials using spin coating, sputter deposition, plasma etching, UV photolithography, AFM, profilometry, and laser confocal microscopy.</li>
+          <li>Developed Python scripts to automate data analysis workflows, resulting in a &gt;50% increase in efficiency. Led the transition from manual data processing to an electronic R&amp;D management platform.</li>
+          <li>Established precise calibration protocols for home-built optical characterization setups, reducing error to &lt;2%.</li>
+          <li>Provided mentorship to early-career scientists and engineers in material characterization techniques, emphasizing problem-solving skills and interdisciplinary collaboration.</li>
+          <li>Coordinated with cross-functional teams on a day-to-day basis and actively engaged in customer/vendor interactions to address technical challenges and align research objectives with market needs.</li>
+        </ul>
+      </li>
+
+      <li class="entry">
+        <p class="entry-title">Graduate Research Assistant</p>
+        <div class="meta-row-icons">
+          <span class="meta-item institute"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 21V7l6-4 6 4v14"/><path d="M3 21h18"/><path d="M9 9h1M9 13h1M14 9h1M14 13h1"/></svg>Texas A&amp;M University</span>
+          <span class="meta-item timeline"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Sep 2017 – Jul 2023</span>
+        </div>
+        <ul class="bullet-list">
+          <li>Developed optimized protocols to synthesize optically anisotropic chalcogenide and perovskite nanorods using hot-injection methods, achieving precise control over size and morphology.</li>
+          <li>Characterized semiconductor NPs using UV-Vis, fluorescence, fluorescence anisotropy, TEM, PXRD, and SAXS.</li>
+          <li>Engineered optical characterization setups to measure the electro-optic response of colloidal semiconductor NPs.</li>
+          <li>Developed MATLAB/Python scripts to calculate detailed balance efficiencies of novel photovoltaic systems. Designed mathematical framework to model nanophotonic systems using Markov chains.</li>
+          <li>Authored 4 peer-reviewed publications and mentored 3 graduate students and 2 undergraduate interns.</li>
+        </ul>
+      </li>
+
+      <li class="entry">
+        <p class="entry-title">Undergraduate Researcher / Research Assistant</p>
+        <div class="meta-row-icons">
+          <span class="meta-item institute"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 21V7l6-4 6 4v14"/><path d="M3 21h18"/><path d="M9 9h1M9 13h1M14 9h1M14 13h1"/></svg>University of Colombo</span>
+          <span class="meta-item timeline"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Sep 2015 – Aug 2017</span>
+        </div>
+        <ul class="bullet-list">
+          <li>Prepared an Au/Pd-decorated, amine-functionalized iron oxide nanocatalyst using a solvothermal method. Investigated the efficacy and recyclability of the catalyst in Suzuki-Miyaura cross-coupling and related homocoupling reactions.</li>
+          <li>Implemented ab-initio methods using Gaussian to model novel acceptor molecules for organic photovoltaic systems.</li>
+        </ul>
+      </li>
+    </ol>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>Teaching Experience</h2>
+    </div>
+    <ol class="list">
+      <li class="entry">
+        <p class="entry-title">Graduate Teaching Assistant <span class="entry-date">Sep 2017 – Jul 2023</span></p>
+        <p class="entry-sub">Texas A&amp;M University</p>
+        <ul class="bullet-list">
+          <li>Taught freshman and sophomore lab classes: Fundamentals of Chemistry Lab I and II (Fall 2017, Spring 2018).</li>
+          <li>Served as teaching assistant and PLTL coordinator for freshman class Fundamentals of Chemistry I (Fall 2019).</li>
+          <li>Served as teaching assistant for junior class Physical Chemistry (Spring 2020).</li>
+          <li>Taught junior lab class Quantitative Analysis Lab (Spring 2021).</li>
+          <li>Mentored first- and second-year graduate students within the Sheldon lab.</li>
+          <li>Served as mentor for prospective graduate students during recruitment events.</li>
+        </ul>
+      </li>
+
+      <li class="entry">
+        <p class="entry-title">Teaching Assistant <span class="entry-date">Mar 2016 – Feb 2017</span></p>
+        <p class="entry-sub">University of Colombo</p>
+        <ul class="bullet-list">
+          <li>Taught Level II Inorganic Chemistry Lab and conducted tutorial sessions for sophomore chemistry majors.</li>
+        </ul>
+      </li>
+    </ol>
+  </section>
+
+  <section id="publications">
+    <div class="section-head">
+      <h2>Publications &amp; Presentations</h2>
+      <span class="count">2016 – 2023</span>
+    </div>
+
+    <p class="subsection-label">Peer-Reviewed Publications</p>
+    <ol class="pub-list">
+
+      <li class="pub-entry">
+        <p class="pub-title"><a href="https://par.nsf.gov/biblio/10656276" target="_blank" rel="noopener">Thin Film Photopatternable Quantum Dot Downconverters with High Optical Density</a></p>
+        <p class="pub-meta">D. Chamberlin, A. Miranda, N. Zaheer, R. J. Ratnaweera, F. S. Etheridge, C. Suits, M. Tranquilli, R. Schaller, D. Talapin, Y. Kambe</p>
+        <p class="pub-meta"><span class="journal">Proceedings of the International Display Workshops</span>, Vol. 30 (IDW '23)</p>
+        <span class="pub-tags"><span class="badge year">2023</span><span class="badge">Conference Proceedings</span></span>
+      </li>
+
+      <li class="pub-entry">
+        <p class="pub-title"><a href="https://pubs.acs.org/doi/abs/10.1021/acsnano.1c08488" target="_blank" rel="noopener">Quantifying Order During Field-Driven Alignment of Colloidal Semiconductor Nanorods</a></p>
+        <p class="pub-meta">R. J. Ratnaweera, F. A. Rodríguez Ortiz, N. J. Gripp, M. T. Sheldon</p>
+        <p class="pub-meta"><span class="journal">ACS Nano</span>, 2022, 16 (3), 3834–3842</p>
+        <span class="pub-tags"><span class="badge year">2022</span><span class="badge">Journal Article</span></span>
+      </li>
+
+      <li class="pub-entry">
+        <p class="pub-title"><a href="https://opg.optica.org/oe/fulltext.cfm?uri=oe-29-3-4249" target="_blank" rel="noopener">Markov Chains for Modeling Complex Luminescence, Absorption, and Scattering in Nanophotonic Systems</a></p>
+        <p class="pub-meta">A. R. Kutayiah, S. Kumar, R. J. Ratnaweera, K. Easwaran, M. Sheldon</p>
+        <p class="pub-meta"><span class="journal">Optics Express</span>, 2021, 29, 4249–4269</p>
+        <span class="pub-tags"><span class="badge year">2021</span><span class="badge">Journal Article</span></span>
+      </li>
+
+      <li class="pub-entry">
+        <p class="pub-title"><a href="https://www.spiedigitallibrary.org/journals/journal-of-photonics-for-energy/volume-10/issue-2/025501/Detailed-balance-efficiencies-for-luminescent-solar-concentrators-with-aligned-semiconductor/10.1117/1.JPE.10.025501.short" target="_blank" rel="noopener">Detailed Balance Efficiencies for Luminescent Solar Concentrators with Aligned Semiconductor Nanorods: The Benefits of Anisotropic Emission</a></p>
+        <p class="pub-meta">J. C. Martin*, R. J. Ratnaweera*, S. Kumar, J.-R. Wen, A. R. Kutayiah, M. T. Sheldon</p>
+        <p class="pub-meta"><span class="journal">Journal of Photonics for Energy</span>, 2020, 10 (2), 025501</p>
+        <span class="pub-tags"><span class="badge year">2020</span><span class="badge">Journal Article</span></span>
+        <p class="equal-note">* Equal contribution</p>
+      </li>
+
+      <li class="pub-entry">
+        <p class="pub-title"><a href="https://royalsocietypublishing.org/rsos/article/7/9/200916/95955/A-magnetically-retrievable-air-and-moisture-stable" target="_blank" rel="noopener">A Magnetically Retrievable Air and Moisture Stable Gold and Palladium Nanocatalyst for Efficient C–C Coupling Reactions</a></p>
+        <p class="pub-meta">C. Goonesinghe, M. Shaik, R. J. Ratnaweera, K. M. N. de Silva, R. M. de Silva</p>
+        <p class="pub-meta"><span class="journal">Royal Society Open Science</span>, 2020, 7 (9), 200916</p>
+        <span class="pub-tags"><span class="badge year">2020</span><span class="badge">Journal Article</span></span>
+      </li>
+
+      <li class="pub-entry">
+        <p class="pub-title"><a href="https://pubs.rsc.org/ra/article-abstract/6/107/105618/542897/Natural-polysaccharides-leading-to-super-adsorbent?redirectedFrom=fulltext" target="_blank" rel="noopener">Natural Polysaccharides Leading to Super Adsorbent Hydroxyapatite Nanoparticles for the Removal of Heavy Metals and Dyes from Aqueous Solutions</a></p>
+        <p class="pub-meta">D. C. Manatunga, R. M. de Silva, K. M. N. de Silva, R. Ratnaweera</p>
+        <p class="pub-meta"><span class="journal">RSC Advances</span>, 2016, 6, 105618–105630</p>
+        <span class="pub-tags"><span class="badge year">2016</span><span class="badge">Journal Article</span></span>
+      </li>
+
+    </ol>
+
+    <p class="subsection-label">Presentations</p>
+    <ol class="pub-list">
+
+      <li class="pub-entry">
+        <p class="pub-title">Quantifying Order During Field-Driven Alignment of Colloidal Semiconductor Nanorods</p>
+        <p class="pub-meta">ACS Southwest Regional Meeting</p>
+        <span class="pub-tags"><span class="badge year">2021</span><span class="badge">Oral Presentation</span></span>
+      </li>
+
+      <li class="pub-entry">
+        <p class="pub-title">Quantification of Meso- and Macro-Scale Ordering of Colloidal Semiconductor Nanorods in the Presence of AC Electric Fields</p>
+        <p class="pub-meta">ACS National Meeting, Spring</p>
+        <span class="pub-tags"><span class="badge year">2021</span><span class="badge">Oral Presentation</span></span>
+      </li>
+
+      <li class="pub-entry">
+        <p class="pub-title">Dipole-Emitting Semiconductor Nanorods for Luminescent Solar Concentration</p>
+        <p class="pub-meta">New Graduate Student Orientation, Department of Chemistry, Texas A&amp;M University</p>
+        <span class="pub-tags"><span class="badge year">2019</span><span class="badge">Oral Presentation</span></span>
+      </li>
+
+      <li class="pub-entry">
+        <p class="pub-title">Dipole-Emitting Semiconductor Nanorods for Luminescent Solar Concentrators</p>
+        <p class="pub-meta">F. A. Cotton Medal Symposium, College Station, TX</p>
+        <span class="pub-tags"><span class="badge year">2019</span><span class="badge">Poster Presentation</span></span>
+      </li>
+
+      <li class="pub-entry">
+        <p class="pub-title">Semiconductor Nanocomposites for Solar Concentration</p>
+        <p class="pub-meta">Texas A&amp;M Conference on Energy, College Station, TX</p>
+        <span class="pub-tags"><span class="badge year">2019</span><span class="badge">Poster Presentation</span></span>
+      </li>
+
+    </ol>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>Skills &amp; Expertise</h2>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <h4>Wet Chemistry</h4>
+        <p>Semiconductor/metal/metal oxide nanoparticle synthesis, organic synthesis, workup and purification procedures, Schlenk line, glovebox, formulation chemistry, nanoparticle inks, optical nanocomposites</p>
+      </div>
+      <div class="skill-group">
+        <h4>Characterization &amp; Metrology</h4>
+        <p>UV-Vis spectroscopy, fluorescence spectroscopy, TRPL, fluorescence anisotropy, optical microscopy, laser confocal microscopy, TEM, SEM, EDS, PXRD, AFM, SAXS, FTIR, GC, laser optics, optomechanical systems, integrating spheres, PLQY/EQE measurements, profilometry</p>
+      </div>
+      <div class="skill-group">
+        <h4>Fabrication</h4>
+        <p>Cleanroom operations, UV photolithography, photoresist application, spin-coating, blade-coating, mask aligners, direct-write lithography tools, sputter deposition, reactive ion etching</p>
+      </div>
+      <div class="skill-group">
+        <h4>Programming &amp; Data Analysis</h4>
+        <p>MATLAB, Python, GNU Octave, LabVIEW, HTML, molecular modeling, Gaussian, AI/ML, Markov chain models, instrument automation, automated data processing, curve fitting, statistical data analysis</p>
+      </div>
+      <div class="skill-group">
+        <h4>Soft Skills</h4>
+        <p>Design of experiments (DOE), problem solving, ability to work independently, time management, project leadership, mentoring, cross-functional collaboration, customer/vendor interactions, technical writing (SOPs, reports, manuscripts), strong verbal and written communication, strong foundation in intellectual property law</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>Honors &amp; Awards</h2>
+    </div>
+    <ol class="list">
+      <li class="entry">
+        <p class="entry-title">NSF IPERF Postdoctoral Fellowship</p>
+        <div class="meta-row-icons">
+          <span class="meta-item institute"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 21V7l6-4 6 4v14"/><path d="M3 21h18"/><path d="M9 9h1M9 13h1M14 9h1M14 13h1"/></svg>National Science Foundation</span>
+          <span class="meta-item timeline"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>May 2023</span>
+        </div>
+        <p class="entry-desc">Awarded to early-career scientists demonstrating exceptional potential in entrepreneurial research.</p>
+      </li>
+      <li class="entry">
+        <p class="entry-title">Jack H. Lunsford '57 Endowed Fellowship in Chemistry</p>
+        <div class="meta-row-icons">
+          <span class="meta-item institute"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 21V7l6-4 6 4v14"/><path d="M3 21h18"/><path d="M9 9h1M9 13h1M14 9h1M14 13h1"/></svg>Texas A&amp;M University</span>
+          <span class="meta-item timeline"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>May 2022</span>
+        </div>
+        <p class="entry-desc">Awarded to one graduate student (from 300+) each year for excellence in physical chemistry research.</p>
+      </li>
+      <li class="entry">
+        <p class="entry-title">Phi Lambda Upsilon (PLU) National Chemistry Honor Society Membership</p>
+        <div class="meta-row-icons">
+          <span class="meta-item institute"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 21V7l6-4 6 4v14"/><path d="M3 21h18"/><path d="M9 9h1M9 13h1M14 9h1M14 13h1"/></svg>Texas A&amp;M University</span>
+          <span class="meta-item timeline"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Aug 2021</span>
+        </div>
+        <p class="entry-desc">Inducted based on academic performance (GPA).</p>
+      </li>
+      <li class="entry">
+        <p class="entry-title">Student of the Year</p>
+        <div class="meta-row-icons">
+          <span class="meta-item institute"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 21V7l6-4 6 4v14"/><path d="M3 21h18"/><path d="M9 9h1M9 13h1M14 9h1M14 13h1"/></svg>University of Colombo</span>
+          <span class="meta-item timeline"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Aug 2016</span>
+        </div>
+        <p class="entry-desc">Awarded annually to one student from a graduating class of 2000+ for overall excellence.</p>
+      </li>
+    </ol>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>Certifications</h2>
+    </div>
+    <ol class="list">
+      <li class="cert-entry">
+        <p class="entry-title">Intellectual Property Law Specialization</p>
+        <p class="entry-meta">University of Pennsylvania — Credential ID K5VDE7QQP7CW</p>
+      </li>
+      <li class="cert-entry">
+        <p class="entry-title">IBM Data Science Professional Certificate <span class="entry-date">(ongoing)</span></p>
+      </li>
+    </ol>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>Leadership &amp; Service</h2>
+    </div>
+    <ul class="bullet-list" style="padding-left: 1.2rem;">
+      <li>Volunteered as in-class tutor at James Earl Rudder High School, Bryan, TX (Mar 2023 – Apr 2023)</li>
+      <li>Served in the Philanthropy Committee of the Phi Lambda Upsilon honor society (Aug 2021 – Aug 2023)</li>
+      <li>Co-organized annual "Ready, Set, Go!" 5K Fun Run to raise funds for local STEM educators (Nov 2021, Nov 2022)</li>
+      <li>Served as event coordinator at TAMU Chemistry Open House and Physics &amp; Engineering Festival</li>
+      <li>Served as treasurer of the Sri Lankan Student Association, Texas A&amp;M University (Sep 2017 – Sep 2018)</li>
+      <li>Served as volunteer lifeguard representing the Sri Lanka Life Saving Association (Jan 2008 – Dec 2012)</li>
+    </ul>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>References</h2>
+    </div>
+    <div class="refs-grid">
+      <div class="ref-card">
+        <p class="name">Dr. Matthew Sheldon</p>
+        <p class="title">Associate Professor (PhD Advisor)</p>
+        <p class="org">Department of Chemistry<br>University of California, Irvine</p>
+        <p class="contact"><a href="mailto:m.sheldon@uci.edu">m.sheldon@uci.edu</a></p>
+      </div>
+      <div class="ref-card">
+        <p class="name">Dr. Danielle R. Chamberlin</p>
+        <p class="title">CTO, NanoPattern Technologies, Inc.</p>
+        <p class="org">2242 W Harrison St Suite 201<br>Chicago, IL 60612</p>
+        <p class="contact">650-797-5994<br><a href="mailto:dchamberlin@nanopatterntechnologies.com">dchamberlin@nanopatterntechnologies.com</a></p>
+      </div>
+      <div class="ref-card">
+        <p class="name">Dr. Yu Kambe</p>
+        <p class="title">CEO, NanoPattern Technologies, Inc.</p>
+        <p class="org">2242 W Harrison St Suite 201<br>Chicago, IL 60612</p>
+        <p class="contact"><a href="mailto:yukambe@nanopatterntechnologies.com">yukambe@nanopatterntechnologies.com</a></p>
+      </div>
+      <div class="ref-card">
+        <p class="name">Dr. Sarbajit Banerjee</p>
+        <p class="title">Professor</p>
+        <p class="org">Department of Chemistry<br>Texas A&amp;M University</p>
+        <p class="contact">979-862-3102<br><a href="mailto:banerjee@chem.tamu.edu">banerjee@chem.tamu.edu</a></p>
+      </div>
+      <div class="ref-card">
+        <p class="name">Dr. A. Ryan Kutayiah</p>
+        <p class="title">Assistant College Professor</p>
+        <p class="org">Department of Engineering and Physics<br>Abilene Christian University</p>
+        <p class="contact"><a href="mailto:ark21b@acu.edu">ark21b@acu.edu</a></p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="page-foot">
+    <span>Last updated July 2026</span>
+    <span><a href="index.html" style="color:var(--teal); text-decoration:none;">← Portfolio home</a></span>
+  </footer>
+
+</div>
+
+</body>
+</html>

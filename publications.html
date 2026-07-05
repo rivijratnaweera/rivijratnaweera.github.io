@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Publications &amp; Presentations — R. J. Ratnaweera</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0d1013;
+    --surface: #14181c;
+    --border: #262d33;
+    --text: #eceeef;
+    --text-dim: #9aa2a9;
+    --text-faint: #5f676e;
+    --gold: #d3a54d;
+    --teal: #6fb8ad;
+    --display: 'Sora', 'Inter', sans-serif;
+    --body: 'Inter', sans-serif;
+    --mono: 'IBM Plex Mono', monospace;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    background-image: radial-gradient(circle at 15% 0%, rgba(211,165,77,0.05), transparent 40%),
+                       radial-gradient(circle at 90% 30%, rgba(111,184,173,0.04), transparent 45%);
+    color: var(--text);
+    font-family: var(--body);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 5rem 1.5rem 6rem;
+  }
+
+  header.page-head {
+    margin-bottom: 3.2rem;
+    padding-bottom: 2.4rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(2rem, 4.8vw, 2.7rem);
+    letter-spacing: -0.02em;
+    margin: 0 0 0.6rem;
+    color: var(--text);
+  }
+
+  .role {
+    font-family: var(--display);
+    font-size: 1.02rem;
+    color: var(--gold);
+    font-weight: 600;
+    margin: 0 0 1.1rem;
+  }
+
+  .tagline {
+    color: var(--text-dim);
+    font-size: 1rem;
+    max-width: 54ch;
+    margin: 0 0 1.8rem;
+  }
+
+  .meta-row {
+    display: flex;
+    gap: 1.6rem;
+    flex-wrap: wrap;
+    font-family: var(--mono);
+    font-size: 0.8rem;
+    color: var(--text-faint);
+  }
+
+  .meta-row a { color: var(--teal); text-decoration: none; }
+  .meta-row a:hover { color: var(--gold); }
+
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin: 3.2rem 0 1.4rem;
+  }
+
+  .section-head h2 {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 1.3rem;
+    margin: 0;
+    color: var(--text);
+  }
+
+  .count {
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    color: var(--text-faint);
+  }
+
+  ol.list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    counter-reset: item;
+  }
+
+  .entry {
+    position: relative;
+    padding: 1.35rem 0 1.35rem 2.8rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .entry:last-child { border-bottom: none; }
+
+  .entry::before {
+    counter-increment: item;
+    content: counter(item, decimal-leading-zero);
+    position: absolute;
+    left: 0;
+    top: 1.4rem;
+    font-family: var(--mono);
+    font-size: 0.82rem;
+    color: var(--gold);
+    width: 2rem;
+  }
+
+  .entry-title {
+    font-family: var(--body);
+    font-weight: 600;
+    font-size: 1.02rem;
+    color: var(--text);
+    margin: 0 0 0.4rem;
+    line-height: 1.45;
+  }
+
+  .entry-title a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+  }
+  .entry-title a:hover {
+    color: var(--gold);
+    border-bottom-color: var(--gold);
+  }
+
+  .entry-meta {
+    color: var(--text-dim);
+    font-size: 0.9rem;
+    margin: 0 0 0.3rem;
+  }
+
+  .entry-meta .journal { font-style: normal; font-weight: 500; color: var(--text); }
+
+  .entry-tags {
+    display: inline-flex;
+    gap: 0.5rem;
+    margin-top: 0.4rem;
+  }
+
+  .badge {
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 0.22rem 0.55rem;
+    border-radius: 4px;
+    background: rgba(111,184,173,0.1);
+    color: var(--teal);
+    border: 1px solid rgba(111,184,173,0.25);
+  }
+
+  .badge.year {
+    background: rgba(211,165,77,0.1);
+    color: var(--gold);
+    border-color: rgba(211,165,77,0.25);
+  }
+
+  .equal-note {
+    font-size: 0.78rem;
+    color: var(--text-faint);
+    margin-top: 0.5rem;
+  }
+
+  footer.page-foot {
+    margin-top: 4rem;
+    padding-top: 1.6rem;
+    border-top: 1px solid var(--border);
+    font-family: var(--mono);
+    font-size: 0.76rem;
+    color: var(--text-faint);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  @media (max-width: 560px){
+    .wrap { padding: 3rem 1.2rem 4rem; }
+    .entry { padding-left: 2.2rem; }
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header class="page-head">
+    <div class="eyebrow">Publications &amp; Presentations</div>
+    <h1>R. J. Ratnaweera</h1>
+    <p class="role">Materials Scientist — Nanotechnology &amp; Nanofabrication</p>
+    <p class="tagline">Working across colloidal nanocrystal synthesis, nanophotonics, catalysis, and thin-film device fabrication.</p>
+    <div class="meta-row">
+      <span>6 Publications</span>
+      <span>5 Presentations</span>
+      <span><a href="#" target="_blank" rel="noopener">Google Scholar Profile →</a></span>
+    </div>
+  </header>
+
+  <section>
+    <div class="section-head">
+      <h2>Peer-Reviewed Publications</h2>
+      <span class="count">2016 – 2023</span>
+    </div>
+    <ol class="list">
+
+      <li class="entry">
+        <p class="entry-title"><a href="https://scholar.google.com/scholar?q=Thin+Film+Photopatternable+Quantum+Dot+Downconverters+with+High+Optical+Density" target="_blank" rel="noopener">Thin Film Photopatternable Quantum Dot Downconverters with High Optical Density</a></p>
+        <p class="entry-meta">Chamberlin, D.; Miranda, A.; Zaheer, N.; Ratnaweera, R. J.; Etheridge, F. S.; Suits, C.; Tranquilli, M.; Schaller, R.; Talapin, D.; Kambe, Y.</p>
+        <p class="entry-meta"><span class="journal">Proceedings of the International Display Workshops</span>, Vol. 30 (IDW '23)</p>
+        <span class="entry-tags"><span class="badge year">2023</span><span class="badge">Conference Proceedings</span></span>
+      </li>
+
+      <li class="entry">
+        <p class="entry-title"><a href="https://scholar.google.com/scholar?q=Quantifying+order+during+field-driven+alignment+of+colloidal+semiconductor+nanorods" target="_blank" rel="noopener">Quantifying Order During Field-Driven Alignment of Colloidal Semiconductor Nanorods</a></p>
+        <p class="entry-meta">Ratnaweera, R. J.; Rodríguez Ortiz, F. A.; Gripp, N. J.; Sheldon, M. T.</p>
+        <p class="entry-meta"><span class="journal">ACS Nano</span>, 2022, 16 (3), 3834–3842</p>
+        <span class="entry-tags"><span class="badge year">2022</span><span class="badge">Journal Article</span></span>
+      </li>
+
+      <li class="entry">
+        <p class="entry-title"><a href="https://scholar.google.com/scholar?q=Markov+chains+for+modeling+complex+luminescence+absorption+and+scattering+in+nanophotonic+systems" target="_blank" rel="noopener">Markov Chains for Modeling Complex Luminescence, Absorption, and Scattering in Nanophotonic Systems</a></p>
+        <p class="entry-meta">Kutayiah, A. R.; Kumar, S.; Ratnaweera, R. J.; Easwaran, K.; Sheldon, M.</p>
+        <p class="entry-meta"><span class="journal">Optics Express</span>, 2021, 29, 4249–4269</p>
+        <span class="entry-tags"><span class="badge year">2021</span><span class="badge">Journal Article</span></span>
+      </li>
+
+      <li class="entry">
+        <p class="entry-title"><a href="https://scholar.google.com/scholar?q=Detailed+balance+efficiencies+for+luminescent+solar+concentrators+with+aligned+semiconductor+nanorods" target="_blank" rel="noopener">Detailed Balance Efficiencies for Luminescent Solar Concentrators with Aligned Semiconductor Nanorods: The Benefits of Anisotropic Emission</a></p>
+        <p class="entry-meta">Martin, J. C.*; Ratnaweera, R. J.*; Kumar, S.; Wen, J.-R.; Kutayiah, A. R.; Sheldon, M. T.</p>
+        <p class="entry-meta"><span class="journal">Journal of Photonics for Energy</span>, 2020, 10 (2), 025501</p>
+        <span class="entry-tags"><span class="badge year">2020</span><span class="badge">Journal Article</span></span>
+        <p class="equal-note">* Equal contribution</p>
+      </li>
+
+      <li class="entry">
+        <p class="entry-title"><a href="https://scholar.google.com/scholar?q=A+magnetically+retrievable+air+and+moisture+stable+gold+and+palladium+nanocatalyst" target="_blank" rel="noopener">A Magnetically Retrievable Air and Moisture Stable Gold and Palladium Nanocatalyst for Efficient C–C Coupling Reactions</a></p>
+        <p class="entry-meta">Goonesinghe, C.; Shaik, M.; Ratnaweera, R. J.; de Silva, K. M. N.; de Silva, R. M.</p>
+        <p class="entry-meta"><span class="journal">Royal Society Open Science</span>, 2020, 7 (9), 200916</p>
+        <span class="entry-tags"><span class="badge year">2020</span><span class="badge">Journal Article</span></span>
+      </li>
+
+      <li class="entry">
+        <p class="entry-title"><a href="https://scholar.google.com/scholar?q=Natural+polysaccharides+leading+to+super+adsorbent+hydroxyapatite+nanoparticles" target="_blank" rel="noopener">Natural Polysaccharides Leading to Super Adsorbent Hydroxyapatite Nanoparticles for the Removal of Heavy Metals and Dyes from Aqueous Solutions</a></p>
+        <p class="entry-meta">Manatunga, D. C.; de Silva, R. M.; de Silva, K. M. N.; Ratnaweera, R.</p>
+        <p class="entry-meta"><span class="journal">RSC Advances</span>, 2016, 6, 105618–105630</p>
+        <span class="entry-tags"><span class="badge year">2016</span><span class="badge">Journal Article</span></span>
+      </li>
+
+    </ol>
+  </section>
+
+  <section>
+    <div class="section-head">
+      <h2>Presentations</h2>
+      <span class="count">2019 – 2021</span>
+    </div>
+    <ol class="list">
+
+      <li class="entry">
+        <p class="entry-title">Quantifying Order During Field-Driven Alignment of Colloidal Semiconductor Nanorods</p>
+        <p class="entry-meta">ACS Southwest Regional Meeting</p>
+        <span class="entry-tags"><span class="badge year">2021</span><span class="badge">Oral Presentation</span></span>
+      </li>
+
+      <li class="entry">
+        <p class="entry-title">Quantification of Meso- and Macro-Scale Ordering of Colloidal Semiconductor Nanorods in the Presence of AC Electric Fields</p>
+        <p class="entry-meta">ACS National Meeting, Spring</p>
+        <span class="entry-tags"><span class="badge year">2021</span><span class="badge">Oral Presentation</span></span>
+      </li>
+
+      <li class="entry">
+        <p class="entry-title">Dipole-Emitting Semiconductor Nanorods for Luminescent Solar Concentration</p>
+        <p class="entry-meta">New Graduate Student Orientation, Department of Chemistry, Texas A&amp;M University</p>
+        <span class="entry-tags"><span class="badge year">2019</span><span class="badge">Oral Presentation</span></span>
+      </li>
+
+      <li class="entry">
+        <p class="entry-title">Dipole-Emitting Semiconductor Nanorods for Luminescent Solar Concentrators</p>
+        <p class="entry-meta">F. A. Cotton Medal Symposium, College Station, TX</p>
+        <span class="entry-tags"><span class="badge year">2019</span><span class="badge">Poster Presentation</span></span>
+      </li>
+
+      <li class="entry">
+        <p class="entry-title">Semiconductor Nanocomposites for Solar Concentration</p>
+        <p class="entry-meta">Texas A&amp;M Conference on Energy, College Station, TX</p>
+        <span class="entry-tags"><span class="badge year">2019</span><span class="badge">Poster Presentation</span></span>
+      </li>
+
+    </ol>
+  </section>
+
+  <footer class="page-foot">
+    <span>Last updated July 2026</span>
+    <span>* denotes equal contribution</span>
+  </footer>
+
+</div>
+
+</body>
+</html>

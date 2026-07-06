@@ -93,6 +93,13 @@
   }
   .meta-row a { color: var(--teal); text-decoration: none; }
   .meta-row a:hover { color: var(--gold); }
+  .meta-row .icon-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--teal);
+  }
+  .meta-row .icon-item svg { flex-shrink: 0; color: currentColor; }
 
   .section-head {
     display: flex;
@@ -164,9 +171,9 @@
   /* Institution + timeline row with icons */
   .meta-row-icons {
     display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 0.4rem 1.6rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.35rem;
     margin: 0 0 0.4rem;
   }
 
@@ -408,9 +415,8 @@
     <h1>Rivi J. Ratnaweera</h1>
     <p class="role">Materials Scientist</p>
     <div class="meta-row">
-      <span>6375 Richmond Hwy Apt 468, Alexandria, VA 22306</span>
-      <span><a href="mailto:rivijratnaweera@gmail.com">rivijratnaweera@gmail.com</a></span>
-      <span>(979) 204-4464</span>
+      <span class="icon-item"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v14H4z"/><path d="M4 6l8 7 8-7"/></svg><a href="mailto:rivijratnaweera@gmail.com">rivijratnaweera@gmail.com</a></span>
+      <span class="icon-item"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 3.5h3l1.5 4-2 1.5a12 12 0 0 0 6 6l1.5-2 4 1.5v3a1.5 1.5 0 0 1-1.6 1.5A16 16 0 0 1 3 5.1 1.5 1.5 0 0 1 4.5 3.5z"/></svg><a href="tel:+19792044464">(979) 204-4464</a></span>
     </div>
   </header>
 
@@ -483,46 +489,6 @@
           <li>Engineered optical characterization setups to measure the electro-optic response of colloidal semiconductor NPs.</li>
           <li>Developed MATLAB/Python scripts to calculate detailed balance efficiencies of novel photovoltaic systems. Designed mathematical framework to model nanophotonic systems using Markov chains.</li>
           <li>Authored 4 peer-reviewed publications and mentored 3 graduate students and 2 undergraduate interns.</li>
-        </ul>
-      </li>
-
-      <li class="entry">
-        <p class="entry-title">Undergraduate Researcher / Research Assistant</p>
-        <div class="meta-row-icons">
-          <span class="meta-item institute"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 21V7l6-4 6 4v14"/><path d="M3 21h18"/><path d="M9 9h1M9 13h1M14 9h1M14 13h1"/></svg>University of Colombo</span>
-          <span class="meta-item timeline"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Sep 2015 – Aug 2017</span>
-        </div>
-        <ul class="bullet-list">
-          <li>Prepared an Au/Pd-decorated, amine-functionalized iron oxide nanocatalyst using a solvothermal method. Investigated the efficacy and recyclability of the catalyst in Suzuki-Miyaura cross-coupling and related homocoupling reactions.</li>
-          <li>Implemented ab-initio methods using Gaussian to model novel acceptor molecules for organic photovoltaic systems.</li>
-        </ul>
-      </li>
-    </ol>
-  </section>
-
-  <section>
-    <div class="section-head">
-      <h2>Teaching Experience</h2>
-    </div>
-    <ol class="list">
-      <li class="entry">
-        <p class="entry-title">Graduate Teaching Assistant <span class="entry-date">Sep 2017 – Jul 2023</span></p>
-        <p class="entry-sub">Texas A&amp;M University</p>
-        <ul class="bullet-list">
-          <li>Taught freshman and sophomore lab classes: Fundamentals of Chemistry Lab I and II (Fall 2017, Spring 2018).</li>
-          <li>Served as teaching assistant and PLTL coordinator for freshman class Fundamentals of Chemistry I (Fall 2019).</li>
-          <li>Served as teaching assistant for junior class Physical Chemistry (Spring 2020).</li>
-          <li>Taught junior lab class Quantitative Analysis Lab (Spring 2021).</li>
-          <li>Mentored first- and second-year graduate students within the Sheldon lab.</li>
-          <li>Served as mentor for prospective graduate students during recruitment events.</li>
-        </ul>
-      </li>
-
-      <li class="entry">
-        <p class="entry-title">Teaching Assistant <span class="entry-date">Mar 2016 – Feb 2017</span></p>
-        <p class="entry-sub">University of Colombo</p>
-        <ul class="bullet-list">
-          <li>Taught Level II Inorganic Chemistry Lab and conducted tutorial sessions for sophomore chemistry majors.</li>
         </ul>
       </li>
     </ol>
@@ -722,15 +688,9 @@
     <div class="refs-grid">
       <div class="ref-card">
         <p class="name">Dr. Matthew Sheldon</p>
-        <p class="title">Associate Professor (PhD Advisor)</p>
+        <p class="title">Associate Professor</p>
         <p class="org">Department of Chemistry<br>University of California, Irvine</p>
         <p class="contact"><a href="mailto:m.sheldon@uci.edu">m.sheldon@uci.edu</a></p>
-      </div>
-      <div class="ref-card">
-        <p class="name">Dr. Danielle R. Chamberlin</p>
-        <p class="title">CTO, NanoPattern Technologies, Inc.</p>
-        <p class="org">2242 W Harrison St Suite 201<br>Chicago, IL 60612</p>
-        <p class="contact">650-797-5994<br><a href="mailto:dchamberlin@nanopatterntechnologies.com">dchamberlin@nanopatterntechnologies.com</a></p>
       </div>
       <div class="ref-card">
         <p class="name">Dr. Yu Kambe</p>
@@ -739,10 +699,16 @@
         <p class="contact"><a href="mailto:yukambe@nanopatterntechnologies.com">yukambe@nanopatterntechnologies.com</a></p>
       </div>
       <div class="ref-card">
+        <p class="name">Dr. Danielle R. Chamberlin</p>
+        <p class="title">CTO, NanoPattern Technologies, Inc.</p>
+        <p class="org">2242 W Harrison St Suite 201<br>Chicago, IL 60612</p>
+        <p class="contact"><a href="mailto:dchamberlin@nanopatterntechnologies.com">dchamberlin@nanopatterntechnologies.com</a></p>
+      </div>
+      <div class="ref-card">
         <p class="name">Dr. Sarbajit Banerjee</p>
         <p class="title">Professor</p>
         <p class="org">Department of Chemistry<br>Texas A&amp;M University</p>
-        <p class="contact">979-862-3102<br><a href="mailto:banerjee@chem.tamu.edu">banerjee@chem.tamu.edu</a></p>
+        <p class="contact"><a href="mailto:banerjee@chem.tamu.edu">banerjee@chem.tamu.edu</a></p>
       </div>
       <div class="ref-card">
         <p class="name">Dr. A. Ryan Kutayiah</p>
